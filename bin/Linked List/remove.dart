@@ -101,10 +101,6 @@ class LinkedList {
     Node? temp = head;
     Node? prev;
 
-    if(value == head?.value){
-      head?.next = head;
-    }
-
     while (temp != null && temp.value != value) {
       prev = temp;
       temp = temp.next;
