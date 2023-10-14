@@ -22,7 +22,7 @@ class LinkedList {
   void append(int value) {
     Node newNode = Node(value: value);
 
-    if (head == null) {
+    if (length == 0) {
       head = newNode;
       tail = newNode;
     } else {
