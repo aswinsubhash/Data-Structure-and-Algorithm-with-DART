@@ -3,6 +3,7 @@
 .dart_tool/
 lib/
 test/
+.vscode/
 *analysis_options.yaml
 *CHANGELOG.md
 *pubspec.lock
