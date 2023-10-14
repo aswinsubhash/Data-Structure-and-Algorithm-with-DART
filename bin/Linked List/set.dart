@@ -73,5 +73,4 @@ void main() {
   print('Before set');
   linkedList.printLinkedList();
   print('After set: ${linkedList.set(2, 10)}');
-  linkedList.printLinkedList();
 }
