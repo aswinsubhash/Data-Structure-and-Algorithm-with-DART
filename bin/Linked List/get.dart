@@ -33,14 +33,19 @@ class LinkedList {
     length = (length ?? 0) + 1;
   }
 
-  Node? get(int index) {
-    if (index < 0 || index >= (length ?? 0)) return null;
-    Node? temp = head;
-    for(int i = 0; i < index; i++){
-      temp = temp?.next;
-    }
-    return temp;
+/// Retrieves and returns the node at the specified [index] in the linked list.
+/// Returns `null` if the index is out of bounds.
+Node? get(int index) {
+  // Check if the provided index is out of bounds or if the list is empty.
+  if (index < 0 || index >= (length ?? 0)) return null;
+
+  Node? temp = head;
+  for (int i = 0; i < index; i++) {
+    temp = temp?.next;
   }
+  return temp;
+}
+
 
   void printLinkedList() {
     Node? temp = head;
