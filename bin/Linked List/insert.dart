@@ -84,6 +84,31 @@ bool insert(int index, int value) {
   return true;
 }
 
+bool insertAfterValue(int targetValue, int value) {
+  Node? temp = head;
+
+  while (temp != null && temp.value != targetValue) {
+    temp = temp.next;
+  }
+
+  if (temp != null) {
+    Node newNode = Node(value: value);
+    newNode.next = temp.next;
+    temp.next = newNode;
+
+    // If the target value was the tail, update the tail.
+    if (temp == tail) {
+      tail = newNode;
+    }
+
+    length = (length ?? 0) + 1;
+    return true;
+  } else {
+    print('Target value not found');
+    return false; // Target value not found in the list.
+  }
+}
+
 
   void printLinkedList() {
     Node? temp = head;
@@ -101,7 +126,9 @@ void main() {
   linkedList.append(5);
   print('Befor insert');
   linkedList.printLinkedList();
-  linkedList.insert(3, 111);
   print('After insert');
+  linkedList.insertAfterValue(6, 111);
   linkedList.printLinkedList();
+ 
+  
 }
