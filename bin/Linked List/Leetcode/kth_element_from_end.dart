@@ -1,6 +1,4 @@
-/// [Has Loop] ( ** Interview Question)
-// Implement a method called hasLoop that checks whether the list contains a loop or not.
-// If the list contains a loop, the method should return true; otherwise, it should return false.
+
 
 class Node {
   final int value;
@@ -36,18 +34,21 @@ class LinkedList {
     length = (length ?? 0) + 1;
   }
 
-  bool hasLoop() {
+  Node? findKthFromEnd(int k) {
     Node? slow = head;
     Node? fast = head;
 
-    while (fast != null && fast.next != null) {
-      slow = slow?.next;
-      fast = fast.next?.next;
-      if (slow == fast) {
-        return true;
-      }
+    for (int i = 0; i < k; i++) {
+      
+      if (fast == null) return null;
+
+      fast = fast.next;
     }
-    return false;
+    while (fast != null) {
+      slow = slow?.next;
+      fast = fast.next;
+    }
+    return slow;
   }
 
   void printLinkedList() {
@@ -68,5 +69,5 @@ void main() {
   linkedList.append(5);
   linkedList.append(6);
   linkedList.printLinkedList();
-  print('Has Loop: ${linkedList.hasLoop()}');
 }
+
