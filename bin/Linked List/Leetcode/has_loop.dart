@@ -66,17 +66,6 @@ class LinkedList {
     length = (length ?? 0) + 1;
   }
 
-  Node? findMiddleNode() {
-    Node? slow = head;
-    Node? fast = head;
-
-    while (fast != null && fast.next != null) {
-      slow = slow?.next;
-      fast = fast.next?.next;
-    }
-    return slow;
-  }
-
   bool hasLoop() {
     Node? slow = head;
     Node? fast = head;
@@ -109,7 +98,5 @@ void main() {
   linkedList.append(5);
   linkedList.append(6);
   linkedList.printLinkedList();
-  print('Middle node is: ${linkedList.findMiddleNode()?.value}');
-  print(linkedList.hasLoop());
-  
+  print('Has Loop: ${linkedList.hasLoop()}');
 }
