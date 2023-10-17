@@ -102,10 +102,11 @@ class HashTable {
 void main() {
   HashTable hashTable = HashTable();
 
+  hashTable.set("paint", 20);
+  hashTable.set("bolts", 40);
   hashTable.set("nails", 100);
   hashTable.set("tile", 50);
   hashTable.set("lumber", 80);
 
-  print(hashTable.get('lumber'));
-  print(hashTable.get('botls'));
+  print(hashTable.keys());
 }
