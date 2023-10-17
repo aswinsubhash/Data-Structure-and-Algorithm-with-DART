@@ -15,7 +15,7 @@ class Stack<T> {
 
   T? pop() {
     if (_stackList.isEmpty) return null;
-    return stackList.removeAt(stackList.length - 1);
+    return stackList.removeLast();
   }
 }
 
