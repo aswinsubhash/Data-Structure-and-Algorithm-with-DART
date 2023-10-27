@@ -27,23 +27,27 @@ class QuickSort {
   }
 
 // Quick Sort algorithm to sort an integer list.
-  static void quickSort(List<int> array, int left, int right) {
+  static void quickSortHelper(List<int> array, int left, int right) {
     // Base case: If the left index is less than the right index, continue sorting.
     if (left < right) {
       // Find the pivot index to partition the array.
       int pivotIndex = pivot(array, left, right);
 
       // Recursively sort the left and right subarrays.
-      quickSort(array, left, pivotIndex - 1); // Sort the left subarray.
-      quickSort(array, pivotIndex + 1, right); // Sort the right subarray.
+      quickSortHelper(array, left, pivotIndex - 1); // Sort the left subarray.
+      quickSortHelper(array, pivotIndex + 1, right); // Sort the right subarray.
     }
+  }
+
+  static void quickSort(List<int> array) {
+    quickSortHelper(array, 0, array.length - 1);
   }
 }
 
 void main() {
   List<int> myArray = [4, 6, 1, 7, 3, 2, 5];
 
-  QuickSort.quickSort(myArray, 0, 6);
+  QuickSort.quickSort(myArray);
 
   print(myArray);
 }
