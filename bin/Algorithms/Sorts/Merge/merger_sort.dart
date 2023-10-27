@@ -36,13 +36,19 @@ class MergeSort {
     return combined; // Return the merged and sorted array.
   }
 
+  // Merge Sort algorithm to sort an integer list.
   static List<int> mergeSort(List<int> array) {
+    // Base case: If the array has only one element, return it as it is already sorted.
     if (array.length == 1) return array;
 
+    // Find the middle index of the array.
     int midIndex = array.length ~/ 2;
+
+    // Recursively sort the left and right halves of the array.
     List<int> left = mergeSort(array.sublist(0, midIndex));
     List<int> right = mergeSort(array.sublist(midIndex));
 
+    // Merge the sorted left and right halves and return the result.
     return merge(left, right);
   }
 }
